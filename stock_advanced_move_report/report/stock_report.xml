@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="stock_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <center>
+                    <h3>
+                        <b>Stock Report</b>
+                    </h3>
+                </center>
+                <div>
+                    <table class="table report_border table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>Date</b>
+                                </th>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>Reference</b>
+                                </th>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>Product</b>
+                                </th>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>From Location</b>
+                                </th>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>Destination Location</b>
+                                </th>
+                                <th style="padding: 0px;" class="text-center">
+                                    <b>Status</b>
+                                </th>
+                            </tr>
+                            <tbody>
+                                <t t-foreach="report" t-as="d">
+                                    <tr>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span t-esc="d['date']"/>
+                                        </td>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span>null</span>
+                                        </td>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span t-esc="d['product']"/>
+                                        </td>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span t-esc="d['from_location']"/>
+                                        </td>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span t-esc="d['destination_location']"/>
+                                        </td>
+                                        <td class="text-center" style="vertical-align:middle;">
+                                            <span t-esc="d['status']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
